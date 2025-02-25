@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:45:43 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 03:45:44 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/25 05:00:25 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ int			ft_isdigit(int c);
 long long	ft_atoi(const char *str);
 size_t		ft_strlen(const char *str );
 char		*ft_strdup(const char *s1);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-void		*ft_memcpy(void *dst, const void *src, size_t n);
-void		*ft_memmove(void *dst, const void *src, size_t len);
 t_slist		*ft_lstnew(int content, int i);
 int			ft_lstsize(t_slist *lst);
 void		ft_lstadd_front(t_slist **lst, t_slist *new);

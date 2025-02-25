@@ -6,15 +6,15 @@
 #    By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 22:24:40 by moel-hai          #+#    #+#              #
-#    Updated: 2025/02/16 12:20:41 by moel-hai         ###   ########.fr        #
+#    Updated: 2025/02/25 05:00:09 by moel-hai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SOURCES	= tools.c tools_one.c instructions.c instructions_one.c instructions_two.c \
-		parsing.c push_swap.c big_nums.c sortin.c ft_memmove.c ft_strlen.c \
-		ft_atoi.c ft_isdigit.c ft_strdup.c ft_substr.c ft_memcpy.c ft_strjoin.c \
+		parsing.c push_swap.c big_nums.c sortin.c ft_strlen.c \
+		ft_atoi.c ft_isdigit.c ft_strdup.c ft_strjoin.c \
 		ft_split.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
