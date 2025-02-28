@@ -6,32 +6,32 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 03:38:09 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 02:25:04 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	num_max(t_slist *stack)
+int	max_nbr(t_slist *stack)
 {
 	int		max;
 
 	max = stack->number;
 	while (stack)
 	{
-		if (max < stack->number)
+		if (stack->number > max)
 			max = stack->number;
 		stack = stack->next;
 	}
 	return (max);
 }
 
-int	max_index(t_slist *stack_b)
+int	max_nbr_place(t_slist *stack_b)
 {
 	int		max;
 	int		index;
 
-	max = num_max(stack_b);
+	max = max_nbr(stack_b);
 	index = 0;
 	while (stack_b)
 	{
@@ -55,10 +55,10 @@ void	sort_b(t_slist **stack_a, t_slist **stack_b)
 			pa(stack_a, stack_b, 0);
 			size--;
 		}
-		else if (max_index(*stack_b) > size / 2)
-			rrb(stack_b, 0);
-		else if (max_index(*stack_b) <= size / 2)
+		else if (max_nbr_place(*stack_b) <= size / 2)
 			rb(stack_b, 0);
+		else if (max_nbr_place(*stack_b) > size / 2)
+			rrb(stack_b, 0);
 	}
 }
 
@@ -71,16 +71,16 @@ void	big_numbers(t_slist **stack_a, t_slist **stack_b, int div)
 	index_by_ascending_order(stack_a);
 	while (*stack_a)
 	{
-		j = ft_lstsize(*stack_a) / div;// 25
+		j = ft_lstsize(*stack_a) / div;
 		if ((*stack_a)->index <= i)
 		{
 			pb(stack_a, stack_b, 0);
+			rb(stack_b, 0);
 			i++;
 		}
 		else if ((*stack_a)->index <= i + j)
 		{
 			pb(stack_a, stack_b, 0);
-			rb(stack_b, 0);
 			i++;
 		}
 		else
