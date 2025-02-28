@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 02:25:04 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 02:29:35 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ int	max_nbr(t_slist *stack)
 
 int	max_nbr_place(t_slist *stack_b)
 {
+	int		i;
 	int		max;
-	int		index;
 
+	i = 0;
 	max = max_nbr(stack_b);
-	index = 0;
 	while (stack_b)
 	{
-		if (max == stack_b->number)
-			return (index);
-		index++;
+		if (stack_b->number == max)
+			return (i);
+		i++;
 		stack_b = stack_b->next;
 	}
-	return (index);
+	return (i);
 }
 
 void	sort_b(t_slist **stack_a, t_slist **stack_b)

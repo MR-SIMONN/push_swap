@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:12:32 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:23:02 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	errors(int i)
 
 void	free_stack(t_slist *s)
 {
-	t_slist	*tmp;
+	t_slist	*p;
 
 	while (s)
 	{
-		tmp = s->next;
+		p = s->next;
 		free(s);
-		s = tmp;
+		s = p;
 	}
 }
 

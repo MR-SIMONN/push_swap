@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_one.c                                 :+:      :+:    :+:   */
+/*   operations_one.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:12 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:11:45 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:37:17 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	sa(t_slist **stack_a, int i)
 {
-	t_slist	*j;
+	t_slist	*p;
 
 	if (!(*stack_a))
 		return ;
 	else if ((*stack_a)->next == NULL)
 		return ;
-	j = *stack_a;
+	p = *stack_a;
 	*stack_a = (*stack_a)->next;
-	j->next = (*stack_a)->next;
-	(*stack_a)->next = j;
+	p->next = (*stack_a)->next;
+	(*stack_a)->next = p;
 	if (i == 0)
 		write(1, "sa\n", 3);
 }
@@ -68,14 +68,14 @@ void	pa(t_slist **stack_a, t_slist **stack_b, int i)
 
 void	pb(t_slist **stack_a, t_slist **stack_b, int i)
 {
-	t_slist	*j;
+	t_slist	*p;
 
 	if (!(*stack_a))
 		return ;
-	j = (*stack_a);
+	p = *stack_a;
 	*stack_a = (*stack_a)->next;
-	j->next = NULL;
-	ft_lstadd_front(stack_b, j);
+	p->next = NULL;
+	ft_lstadd_front(stack_b, p);
 	if (i == 0)
 		write(1, "pb\n", 3);
 }

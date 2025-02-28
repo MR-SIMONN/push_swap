@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:26 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:12:31 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:34:45 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ void	normal_indexing(t_slist *s)
 t_slist	*min_node(t_slist **stack)
 {
 	int			first_time;
-	t_slist		*head;
+	t_slist		*p;
 	t_slist		*min;
 
 	first_time = 1;
-	head = *stack;
+	p = *stack;
 	min = NULL;
-	while (head)
+	while (p)
 	{
-		if ((head->index == -1) && (first_time || head->number < min->number))
+		if ((p->index == -1) && (first_time || p->number < min->number))
 		{
-			min = head;
+			min = p;
 			first_time = 0;
 		}
-		head = head->next;
+		p = p->next;
 	}
 	return (min);
 }
@@ -49,13 +49,13 @@ t_slist	*min_node(t_slist **stack)
 void	index_by_ascending_order(t_slist **s)
 {
 	int			i;
-	t_slist		*head;
+	t_slist		*p;
 
 	i = 0;
-	head = min_node(s);
-	while (head)
+	p = min_node(s);
+	while (p)
 	{
-		head->index = i++;
-		head = min_node(s);
+		p->index = i++;
+		p = min_node(s);
 	}
 }

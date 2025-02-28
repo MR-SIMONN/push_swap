@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:33:51 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 04:33:56 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:26:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 int	ft_lstsize(t_slist *lst)
 {
 	int		i;
-	t_slist	*p;
 
 	if (!lst)
 		return (0);
 	i = 0;
-	p = lst;
-	while (p)
+	while (lst)
 	{
 		i++;
-		p = p->next;
+		lst = lst->next;
 	}
 	return (i);
 }

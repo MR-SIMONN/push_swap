@@ -6,39 +6,36 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:01 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:12:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:18:08 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	duplicated_check(t_slist *nums)
+void	duplicated_check(t_slist *stack_a)
 {
 	int			i;
 	int			j;
-	t_slist		*head;
-	t_slist		*tmp_list;
+	t_slist		*p;
 
-	head = nums;
-	while (nums)
+	while (stack_a)
 	{
-		i = nums->number;
+		i = stack_a->number;
 		j = 0;
-		tmp_list = nums;
-		while (tmp_list)
+		p = stack_a;
+		while (p)
 		{
-			if (i == tmp_list->number)
+			if (i == p->number)
 				j++;
-			if (tmp_list->number == i && j >= 2)
+			if (j > 1)
 				errors(1);
-			tmp_list = tmp_list->next;
+			p = p->next;
 		}
-		nums = nums->next;
+		stack_a = stack_a->next;
 	}
-	nums = head;
 }
 
-void	ft_check(char *s)
+void	only_digits_check(char *s)
 {
 	int	i;
 
@@ -66,7 +63,7 @@ void	is_it_valid(char *s)
 		nb = ft_atoi(str[i]);
 		if (nb > INT32_MAX || nb < INT32_MIN)
 			errors(1);
-		ft_check(str[i]);
+		only_digits_check(str[i]);
 		i++;
 	}
 	free_all(str);

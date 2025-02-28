@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   operations_two.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:11:36 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 03:44:59 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 void	ra(t_slist **stack_a, int i)
 {
-	t_slist		*j;
+	t_slist		*p;
 
 	if (!(*stack_a))
 		return ;
 	else if ((*stack_a)->next == NULL)
 		return ;
-	j = *stack_a;
-	ft_lstlast(*stack_a)->next = j;
-	*stack_a = j->next;
-	j->next = NULL;
+	p = *stack_a;
+	ft_lstlast(*stack_a)->next = p;
+	*stack_a = p->next;
+	p->next = NULL;
 	if (i == 0)
 		write(1, "ra\n", 3);
 }
 
 void	rb(t_slist **stack_b, int i)
 {
-	t_slist		*j;
+	t_slist		*p;
 
 	if (!(*stack_b))
 		return ;
-	else if ((*stack_b)->next == NULL)
+	else if (!((*stack_b)->next))
 		return ;
-	j = *stack_b;
-	ft_lstlast((t_slist *)*stack_b)->next = (t_slist *)j;
-	*stack_b = j->next;
-	j->next = NULL;
+	p = *stack_b;
+	ft_lstlast(*stack_b)->next = p;
+	*stack_b = p->next;
+	p->next = NULL;
 	if (i == 0)
 		write(1, "rb\n", 3);
 }
