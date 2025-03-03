@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/03 02:20:56 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/03 03:32:16 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	sort_b(t_slist **stack_a, t_slist **stack_b)
 	}
 }
 
-static int    detect_bad_distribution(t_slist *stack)
+static int    bad_distribution(t_slist *stack)
 {
     t_slist            *ptr;
     int                diff_count;
@@ -88,11 +88,9 @@ void	big_numbers(t_slist **stack_a, t_slist **stack_b, int div)
 {
 	int		i;
 	int		j;
-	int        bad_distribution;
 	
 	i = 0;
 	index_by_ascending_order(stack_a);
-	bad_distribution = detect_bad_distribution(*stack_a);
 	while (*stack_a)
 	{
 		j = ft_lstsize(*stack_a) / div;
@@ -107,7 +105,7 @@ void	big_numbers(t_slist **stack_a, t_slist **stack_b, int div)
 			rb(stack_b, 0);			
 			i++;
 		}
-		else if (bad_distribution)
+		else if (bad_distribution(*stack_a))
             rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
