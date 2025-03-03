@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:01 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 03:18:08 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:45:59 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ void	parsing(char **av)
 	i = 1;
 	while (av[i])
 	{
+		if (ft_strlen(av[i]) == 0)
+			errors(1);
 		is_it_valid(av[i]);
 		nbr = 0;
 		j = 0;
-		if (ft_strlen(av[i]) == 0)
-			errors(1);
 		while (av[i][j])
 		{
 			if (ft_isdigit(av[i][j]))
