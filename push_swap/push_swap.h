@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:14 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/03 17:05:07 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/04 00:44:46 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sort_it(t_slist **stack_a, t_slist **stack_b);
 int		is_sorted(t_slist	*s);
 void	rra(t_slist **stack_a, int i);
 void	rrb(t_slist **stack_b, int i);
-void	big_numbers(t_slist **stack_a, t_slist **stack_b, int div);
+void	large_numbers(t_slist **stack_a, t_slist **stack_b, int div);
 t_slist	*lstbeforelast(t_slist *lst);
 void	index_by_ascending_order(t_slist **stack);
 t_slist	*min_node(t_slist **stack);

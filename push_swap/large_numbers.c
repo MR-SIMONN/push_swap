@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/03 17:04:14 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:11:00 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	max_nbr_place(t_slist *stack_b)
 	return (i);
 }
 
-void	sort_b(t_slist **stack_a, t_slist **stack_b)
+void	sort_stack_b(t_slist **stack_a, t_slist **stack_b)
 {
 	int		size;
 
@@ -62,53 +62,51 @@ void	sort_b(t_slist **stack_a, t_slist **stack_b)
 	}
 }
 
-static int    bad_distribution(t_slist *stack)
+static int    detect_bad_distribution(t_slist *stack)
 {
-    t_slist            *ptr;
+    t_slist            *p;
     int                diff_count;
     int                diff;
     int                size;
 
     size = ft_lstsize(stack);
     diff_count = 0;
-    ptr = stack;
-    while (ptr && ptr->next)
+    p = stack;
+    while (p && p->next)
     {
-        diff = ptr->index - ptr->next->index;
+        diff = p->index - p->next->index;
         if (diff == 2 || diff == 3 || diff == 4)
             diff_count++;
-        ptr = ptr->next;
+        p = p->next;
     }
     if (diff_count * 10 >= size * 6)
         return (1);
     return (0);
 }
 
-void	big_numbers(t_slist **stack_a, t_slist **stack_b, int div)
+void	large_numbers(t_slist **stack_a, t_slist **stack_b, int j)
 {
 	int		i;
-	int		j;
 	
 	i = 0;
 	index_by_ascending_order(stack_a);
 	while (*stack_a)
 	{
-		j = ft_lstsize(*stack_a) / div;
 		if ((*stack_a)->index <= i)
 		{
 			pb(stack_a, stack_b, 0);
 			i++;
 		}
-		else if ((*stack_a)->index <= i + j)// sa sa ra rb rra rrb pa pb 
+		else if ((*stack_a)->index <= i + j)
 		{
 			pb(stack_a, stack_b, 0);
 			rb(stack_b, 0);
 			i++;
 		}
-		else if (bad_distribution(*stack_a))
+		else if (detect_bad_distribution(*stack_a))
             rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
 	}
-	sort_b(stack_a, stack_b);
+	sort_stack_b(stack_a, stack_b);
 }

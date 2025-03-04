@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sortin.c                                           :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:20 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 01:12:28 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/04 16:06:12 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,8 @@ void	sort_it(t_slist **stack_a, t_slist **stack_b)
 		sort_four(stack_a, stack_b);
 	else if (size == 5)
 		sort_five(stack_a, stack_b);
-	else if (size <= 200)
-		big_numbers(stack_a, stack_b, 4);
+	else if (size <= 100)
+		large_numbers(stack_a, stack_b, 16);
 	else
-		big_numbers(stack_a, stack_b, 10);
+		large_numbers(stack_a, stack_b, 36);
 }
