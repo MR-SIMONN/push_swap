@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:12 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 03:37:17 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/03 16:55:04 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,6 @@ void	sa(t_slist **stack_a, int i)
 	(*stack_a)->next = p;
 	if (i == 0)
 		write(1, "sa\n", 3);
-}
-
-void	sb(t_slist **stack_b, int i)
-{
-	t_slist	*j;
-
-	if (!(*stack_b))
-		return ;
-	else if ((*stack_b)->next == NULL)
-		return ;
-	j = *stack_b;
-	*stack_b = (*stack_b)->next;
-	j->next = (*stack_b)->next;
-	(*stack_b)->next = j;
-	if (i == 0)
-		write(1, "sb\n", 3);
-}
-
-void	ss(t_slist **stack_a, t_slist **stack_b, int i)
-{
-	sa(stack_a, 1);
-	sb(stack_b, 1);
-	if (i == 0)
-		write(1, "ss\n", 3);
 }
 
 void	pa(t_slist **stack_a, t_slist **stack_b, int i)
