@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 03:45:43 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 02:13:00 by moel-hai         ###   ########.fr       */
+/*   Created: 2025/03/05 08:35:00 by moel-hai          #+#    #+#             */
+/*   Updated: 2025/03/05 11:22:49 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
-# include <stdio.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -25,6 +25,22 @@ typedef struct s_list
 	struct s_list	*next;
 	int				index;
 }	t_list;
+
+void	sa(t_list **stack_a, int i);
+void	pa(t_list **stack_a, t_list **stack_b, int i);
+void	pb(t_list **stack_a, t_list **stack_b, int i);
+void	ra(t_list **stack_a, int i);
+void	rb(t_list **stack_b, int i);
+void	rra(t_list **stack_a, int i);
+void	rrb(t_list **stack_b, int i);
+void	parsing(char **av);
+void	duplicated_check(t_list *nums);
+void	errors(int i);
+int		is_sorted(t_list	*s);
+t_list	*lstbeforelast(t_list *lst);
+void	free_stack(t_list *st);
+void	free_all(char **str);
+int		ft_strcmp(const char *s1, const char *s2);
 
 int			ft_isdigit(int c);
 long long	ft_atoi(const char *str);

@@ -6,11 +6,11 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:33:00 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 04:33:23 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 10:07:36 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 int	ft_isdigit(int c)
 {

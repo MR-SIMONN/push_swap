@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 04:34:28 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 10:08:26 by moel-hai         ###   ########.fr       */
+/*   Created: 2025/03/05 10:12:01 by moel-hai          #+#    #+#             */
+/*   Updated: 2025/03/05 10:12:19 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static char	*check_null(char const *s1, char const *s2)
 {

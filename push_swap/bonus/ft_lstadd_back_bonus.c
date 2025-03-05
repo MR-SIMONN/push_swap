@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 04:33:45 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 10:08:12 by moel-hai         ###   ########.fr       */
+/*   Created: 2025/03/05 10:10:35 by moel-hai          #+#    #+#             */
+/*   Updated: 2025/03/05 10:10:57 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-t_list	*ft_lstnew(int content, int i)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*s;
+	t_list	*p;
 
-	s = (t_list *)malloc(sizeof(t_list));
-	if (!s)
-		return (0);
-	s->number = content;
-	s->index = i;
-	s->next = NULL;
-	return (s);
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	p = ft_lstlast(*lst);
+	p->next = new;
 }

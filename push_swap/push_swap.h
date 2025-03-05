@@ -6,18 +6,25 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:14 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 10:04:30 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
-# include <string.h>
 # include <stdlib.h>
-# include "libft.h"
+# include <string.h>
+# include <fcntl.h>
+# include <limits.h>
+
+typedef struct s_list
+{
+	int				number;
+	struct s_list	*next;
+	int				index;
+}	t_list;
 
 void	duplicated_check(t_list *nums);
 void	sa(t_list **stack_a, int i);
@@ -43,5 +50,17 @@ void	sort_five(t_list **stack_a, t_list **stack_b);
 int		min_nbr_index(t_list *stack, int in);
 void	normal_indexing(t_list *stack);
 void	free_stack(t_list *st);
+
+int			ft_isdigit(int c);
+long long	ft_atoi(const char *str);
+size_t		ft_strlen(const char *str );
+char		*ft_strdup(const char *s1);
+t_list		*ft_lstnew(int content, int i);
+int			ft_lstsize(t_list *lst);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+t_list		*ft_lstlast(t_list *lst);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		**ft_split(char const *s, char c);
 
 #endif
