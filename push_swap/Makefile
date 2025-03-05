@@ -6,7 +6,7 @@
 #    By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 22:24:40 by moel-hai          #+#    #+#              #
-#    Updated: 2025/03/04 00:34:23 by moel-hai         ###   ########.fr        #
+#    Updated: 2025/03/05 01:38:59 by moel-hai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ all: $(NAME)
 	cc $(FLAGS) -c $<
 
 $(NAME) : $(OBJECTS) push_swap.h
-	@cc -o $(NAME) ${OBJECTS}
+	cc -o $(NAME) ${OBJECTS}
 
 clean:
 	rm -f $(OBJECTS)

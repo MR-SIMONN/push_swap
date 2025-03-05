@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:09 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 03:18:56 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 01:52:57 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ t_slist	*make_stack(char **av)
 		ft_lstadd_back(&result, ft_lstnew(ft_atoi(tmp[i]), -1));
 		i++;
 	}
-	free(str);
-	free_all(tmp);
-	return (result);
+	return (free(str), free_all(tmp), result);
 }
 
 int	main(int ac, char **av)

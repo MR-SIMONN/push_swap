@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:34:28 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 04:34:30 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/04 23:58:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[i])
 		tab[j++] = s2[i++];
 	tab[j] = '\0';
+	free((void *)s1);
 	return (tab);
 }

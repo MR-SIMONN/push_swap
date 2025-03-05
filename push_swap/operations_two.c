@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/03 17:03:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/04 23:36:15 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,14 @@ void	rb(t_slist **stack_b, int i)
 void	rra(t_slist **stack_a, int i)
 {
 	t_slist		*j;
-	t_slist		*a;
+	t_slist		*p;
 
-	if (!(*stack_a))
+	if (!(*stack_a) || (*stack_a)->next == NULL)
 		return ;
-	else if ((*stack_a)->next == NULL)
-		return ;
-	a = *stack_a;
+	p = *stack_a;
 	j = lstbeforelast(*stack_a);
 	*stack_a = j->next;
-	j->next->next = a;
+	j->next->next = p;
 	j->next = 0;
 	if (i == 0)
 		write(1, "rra\n", 4);
@@ -65,14 +63,14 @@ void	rra(t_slist **stack_a, int i)
 void	rrb(t_slist **stack_b, int i)
 {
 	t_slist		*j;
-	t_slist		*a;
+	t_slist		*p;
 
 	if (!(*stack_b) || (*stack_b)->next == NULL)
 		return ;
-	a = *stack_b;
+	p = *stack_b;
 	j = lstbeforelast(*stack_b);
 	*stack_b = j->next;
-	j->next->next = a;
+	j->next->next = p;
 	j->next = 0;
 	if (i == 0)
 		write(1, "rrb\n", 4);
