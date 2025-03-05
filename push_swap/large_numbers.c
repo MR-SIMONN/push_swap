@@ -6,13 +6,13 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 00:23:37 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	max_nbr(t_slist *stack)
+int	max_nbr(t_list *stack)
 {
 	int		max;
 
@@ -26,7 +26,7 @@ int	max_nbr(t_slist *stack)
 	return (max);
 }
 
-int	max_nbr_place(t_slist *stack_b)
+int	max_nbr_place(t_list *stack_b)
 {
 	int		i;
 	int		max;
@@ -43,7 +43,7 @@ int	max_nbr_place(t_slist *stack_b)
 	return (i);
 }
 
-void	sort_stack_b(t_slist **stack_a, t_slist **stack_b)
+void	sort_stack_b(t_list **stack_a, t_list **stack_b)
 {
 	int		size;
 
@@ -62,9 +62,9 @@ void	sort_stack_b(t_slist **stack_a, t_slist **stack_b)
 	}
 }
 
-int    if_bad_distribution(t_slist *stack)
+int    if_bad_distribution(t_list *stack)
 {
-    t_slist            *p;
+    t_list            *p;
     int                diff_count;
     int                diff;
     int                size;
@@ -84,7 +84,7 @@ int    if_bad_distribution(t_slist *stack)
     return (0);
 }
 
-void	large_numbers(t_slist **stack_a, t_slist **stack_b, int j)
+void	large_numbers(t_list **stack_a, t_list **stack_b, int j)
 {
 	int		i;
 	

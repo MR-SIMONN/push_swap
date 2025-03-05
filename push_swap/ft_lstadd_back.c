@@ -6,15 +6,15 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:33:06 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/25 04:33:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_slist **lst, t_slist *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_slist	*p;
+	t_list	*p;
 
 	if (!lst || !new)
 		return ;

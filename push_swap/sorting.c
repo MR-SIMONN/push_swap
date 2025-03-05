@@ -6,13 +6,13 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:20 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/04 16:06:12 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	min_place(t_slist *stack, int min_node)
+int	min_place(t_list *stack, int min_node)
 {
 	int		move;
 
@@ -27,7 +27,7 @@ int	min_place(t_slist *stack, int min_node)
 	return (move);
 }
 
-void	sort_five(t_slist **stack_a, t_slist **stack_b)
+void	sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int	move;
 
@@ -51,7 +51,7 @@ void	sort_five(t_slist **stack_a, t_slist **stack_b)
 	pa(stack_a, stack_b, 0);
 }
 
-void	sort_four(t_slist **stack_a, t_slist **stack_b)
+void	sort_four(t_list **stack_a, t_list **stack_b)
 {
 	int		min_index;
 
@@ -70,7 +70,7 @@ void	sort_four(t_slist **stack_a, t_slist **stack_b)
 	pa(stack_a, stack_b, 0);
 }
 
-void	sort_three(t_slist **stack_a)
+void	sort_three(t_list **stack_a)
 {
 	int		min;
 	int		second_min;
@@ -98,7 +98,7 @@ void	sort_three(t_slist **stack_a)
 	}
 }
 
-void	sort_it(t_slist **stack_a, t_slist **stack_b)
+void	sort_it(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 

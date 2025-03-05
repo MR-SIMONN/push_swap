@@ -6,17 +6,17 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:01 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/03 03:29:57 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	duplicated_check(t_slist *stack_a)
+void	duplicated_check(t_list *stack_a)
 {
 	int			i;
 	int			j;
-	t_slist		*p;
+	t_list		*p;
 
 	while (stack_a)
 	{

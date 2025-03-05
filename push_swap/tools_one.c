@@ -6,13 +6,13 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:26 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 03:34:45 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	normal_indexing(t_slist *s)
+void	normal_indexing(t_list *s)
 {
 	int		i;
 
@@ -25,11 +25,11 @@ void	normal_indexing(t_slist *s)
 	}
 }
 
-t_slist	*min_node(t_slist **stack)
+t_list	*min_node(t_list **stack)
 {
 	int			first_time;
-	t_slist		*p;
-	t_slist		*min;
+	t_list		*p;
+	t_list		*min;
 
 	first_time = 1;
 	p = *stack;
@@ -46,10 +46,10 @@ t_slist	*min_node(t_slist **stack)
 	return (min);
 }
 
-void	index_by_ascending_order(t_slist **s)
+void	index_by_ascending_order(t_list **s)
 {
 	int			i;
-	t_slist		*p;
+	t_list		*p;
 
 	i = 0;
 	p = min_node(s);

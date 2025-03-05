@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:31 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/02/28 03:23:02 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	errors(int i)
 	exit (0);
 }
 
-void	free_stack(t_slist *s)
+void	free_stack(t_list *s)
 {
-	t_slist	*p;
+	t_list	*p;
 
 	while (s)
 	{
@@ -42,14 +42,12 @@ void	free_all(char **str)
 	while (str[i])
 	{
 		free(str[i]);
-		str[i] = NULL;
 		i++;
 	}
 	free(str);
-	str = NULL;
 }
 
-t_slist	*lstbeforelast(t_slist *lst)
+t_list	*lstbeforelast(t_list *lst)
 {
 	while (lst)
 	{
@@ -60,7 +58,7 @@ t_slist	*lstbeforelast(t_slist *lst)
 	return (lst);
 }
 
-int	min_nbr_index(t_slist *stack, int in)
+int	min_nbr_index(t_list *stack, int in)
 {
 	int		min;
 	int		index;

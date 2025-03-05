@@ -6,13 +6,13 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:09 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 01:52:57 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:14:14 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_slist	*s)
+int	is_sorted(t_list	*s)
 {
 	while (s)
 	{
@@ -23,11 +23,11 @@ int	is_sorted(t_slist	*s)
 	return (1);
 }
 
-t_slist	*make_stack(char **av)
+t_list	*make_stack(char **av)
 {
 	int		i;
 	char	*str;
-	t_slist	*result;
+	t_list	*result;
 	char	**tmp;
 
 	i = 1;
@@ -52,10 +52,9 @@ t_slist	*make_stack(char **av)
 
 int	main(int ac, char **av)
 {
-	t_slist	*stack_a;
-	t_slist	*stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-	(void)stack_b;
 	if (ac == 1)
 		return (0);
 	if (ac > 1)

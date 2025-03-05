@@ -6,15 +6,15 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/04 23:36:15 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_slist **stack_a, int i)
+void	ra(t_list **stack_a, int i)
 {
-	t_slist		*p;
+	t_list		*p;
 
 	if (!(*stack_a))
 		return ;
@@ -28,9 +28,9 @@ void	ra(t_slist **stack_a, int i)
 		write(1, "ra\n", 3);
 }
 
-void	rb(t_slist **stack_b, int i)
+void	rb(t_list **stack_b, int i)
 {
-	t_slist		*p;
+	t_list		*p;
 
 	if (!(*stack_b))
 		return ;
@@ -44,10 +44,10 @@ void	rb(t_slist **stack_b, int i)
 		write(1, "rb\n", 3);
 }
 
-void	rra(t_slist **stack_a, int i)
+void	rra(t_list **stack_a, int i)
 {
-	t_slist		*j;
-	t_slist		*p;
+	t_list		*j;
+	t_list		*p;
 
 	if (!(*stack_a) || (*stack_a)->next == NULL)
 		return ;
@@ -60,10 +60,10 @@ void	rra(t_slist **stack_a, int i)
 		write(1, "rra\n", 4);
 }
 
-void	rrb(t_slist **stack_b, int i)
+void	rrb(t_list **stack_b, int i)
 {
-	t_slist		*j;
-	t_slist		*p;
+	t_list		*j;
+	t_list		*p;
 
 	if (!(*stack_b) || (*stack_b)->next == NULL)
 		return ;
