@@ -6,11 +6,12 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:08:11 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 11:08:13 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:13:28 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "../checker.h"
 
 int	no_newline(char *s)
 {

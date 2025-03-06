@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 11:08:18 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 11:10:47 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:12:41 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*check_null(char const *s1, char const *s2);
-char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
