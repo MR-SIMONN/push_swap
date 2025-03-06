@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:19:42 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:41:16 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,32 +62,32 @@ void	sort_stack_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-int    if_bad_distribution(t_list *stack)
+int	if_bad_distribution(t_list *stack)
 {
-    t_list            *p;
-    int                diff_count;
-    int                diff;
-    int                size;
+	t_list	*p;
+	int		diff_count;
+	int		diff;
+	int		size;
 
-    size = ft_lstsize(stack);
-    diff_count = 0;
-    p = stack;
-    while (p && p->next)
-    {
-        diff = p->index - p->next->index;
-        if (diff == 2 || diff == 3 || diff == 4)
-            diff_count++;
-        p = p->next;
-    }
-    if (diff_count * 10 >= size * 6)
-        return (1);
-    return (0);
+	size = ft_lstsize(stack);
+	diff_count = 0;
+	p = stack;
+	while (p && p->next)
+	{
+		diff = p->index - p->next->index;
+		if (diff == 2 || diff == 3 || diff == 4)
+			diff_count++;
+		p = p->next;
+	}
+	if (diff_count * 10 >= size * 6)
+		return (1);
+	return (0);
 }
 
 void	large_numbers(t_list **stack_a, t_list **stack_b, int j)
 {
 	int		i;
-	
+
 	i = 0;
 	index_by_ascending_order(stack_a);
 	while (*stack_a)
@@ -104,7 +104,7 @@ void	large_numbers(t_list **stack_a, t_list **stack_b, int j)
 			i++;
 		}
 		else if (if_bad_distribution(*stack_a))
-            rra(stack_a, 0);
+			rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
 	}

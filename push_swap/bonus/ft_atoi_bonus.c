@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:06:28 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 10:07:05 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:51:00 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ static int	skip_it(char *str, int *pi)
 	return (sign);
 }
 
-long long	ft_atoi(const char	*str)
+long	ft_atoi(const char	*str)
 {
-	int			i;
-	int			s;
-	long long	r;
-	long long	prev_r;
+	int		i;
+	int		s;
+	long	r;
+	long	prev_r;
 
 	i = 0;
 	r = 0;

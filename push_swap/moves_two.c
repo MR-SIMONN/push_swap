@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_two.c                                   :+:      :+:    :+:   */
+/*   moves_two.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:01:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 02:12:40 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:56:14 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	rra(t_list **stack_a, int i)
 	if (!(*stack_a) || (*stack_a)->next == NULL)
 		return ;
 	p = *stack_a;
-	j = lstbeforelast(*stack_a);
+	j = next_to_last(*stack_a);
 	*stack_a = j->next;
 	j->next->next = p;
 	j->next = 0;
@@ -68,7 +68,7 @@ void	rrb(t_list **stack_b, int i)
 	if (!(*stack_b) || (*stack_b)->next == NULL)
 		return ;
 	p = *stack_b;
-	j = lstbeforelast(*stack_b);
+	j = next_to_last(*stack_b);
 	*stack_b = j->next;
 	j->next->next = p;
 	j->next = 0;

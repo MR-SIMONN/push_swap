@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 09:59:07 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 09:59:23 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/06 07:56:14 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	free_all(char **str)
 	free(str);
 }
 
-t_list	*lstbeforelast(t_list *lst)
+t_list	*next_to_last(t_list *lst)
 {
 	while (lst)
 	{
