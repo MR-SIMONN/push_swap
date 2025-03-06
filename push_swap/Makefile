@@ -6,7 +6,7 @@
 #    By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 22:24:40 by moel-hai          #+#    #+#              #
-#    Updated: 2025/03/06 07:14:54 by moel-hai         ###   ########.fr        #
+#    Updated: 2025/03/06 08:05:37 by moel-hai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-%.o: %.c push_swap.h
+%.o: %.c push_swap.h bonus/checker.h
 	cc ${FLAGS} -c $< -o $@
 
 $(NAME) : $(OBJS)
@@ -52,9 +52,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean
-
-redo: re
-	@make clean
-
-bredo: fclean bonus
-	@make clean
