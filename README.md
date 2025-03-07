@@ -1,10 +1,10 @@
 
 
-                                    PPPP   U   U  SSSSS  H   H      SSSSS    SSSSS  W   W   AAAAA  PPPP
-                                    P   P  U   U  S      H   H      S        S      W   W  A     A P   P
-                                    PPPPP  U   U  SSSSS  HHHHH      SSSSS    SSSSS  W W W  AAAAAAA PPPP
-                                    P      U   U      S  H   H          S        S  W W W  A     A P
-                                    P      UUUUU  SSSSS  H   H      SSSSS    SSSSS  W   W  A     A P
+               PPPP   U   U  SSSSS  H   H      SSSSS    SSSSS  W   W   AAAAA  PPPP
+               P   P  U   U  S      H   H      S        S      W   W  A     A P   P
+               PPPPP  U   U  SSSSS  HHHHH      SSSSS    SSSSS  W W W  AAAAAAA PPPP
+               P      U   U      S  H   H          S        S  W W W  A     A P
+               P      UUUUU  SSSSS  H   H      SSSSS    SSSSS  W   W  A     A P
 
 Push_swap is a sorting challenge where I had to sort a stack of numbers using only a limited set of operations while minimizing the number of moves. The project consists of two stacks: A, which starts with all the numbers, and B, which serves as temporary storage. Since I couldn't use standard sorting algorithms, I had to carefully plan each move to achieve the most efficient solution.
 
