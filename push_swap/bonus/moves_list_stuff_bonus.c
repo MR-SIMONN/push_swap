@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 15:30:20 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 10:43:19 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:14:50 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,15 @@ t_moves	*ft_moves_new(char *content)
 
 	s = (t_moves *)malloc(sizeof(t_moves));
 	if (!s)
-    {
-        free(content);
-        errors(1);
-    }
+	{
+		free(content);
+		errors(1);
+	}
 	s->str = ft_strdup(content);
 	s->next = NULL;
 	return (s);
 }
+
 void	ft_movesadd_back(t_moves **lst, t_moves *new)
 {
 	t_moves	*p;
@@ -70,7 +71,7 @@ void	ft_movesadd_back(t_moves **lst, t_moves *new)
 	p->next = new;
 }
 
-void    make_moves(t_moves **moves, char *str)
+void	make_moves(t_moves **moves, char *str)
 {
 	ft_movesadd_back(moves, ft_moves_new(str));
 }

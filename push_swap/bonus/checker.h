@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:35:00 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 08:44:47 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:13:14 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
-void    make_moves(t_moves **moves, char *str);
+void	make_moves(t_moves **moves, char *str);
 
 #endif
