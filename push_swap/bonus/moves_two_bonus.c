@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:00:43 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/06 07:56:14 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:25:47 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ void	rb(t_list **stack_b, int i)
 	p->next = NULL;
 	if (i == 0)
 		write(1, "rb\n", 3);
+}
+
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	ra(stack_a, 1);
+	rb(stack_b, 1);
+	write(1, "rr\n", 3);
 }
 
 void	rra(t_list **stack_a, int i)

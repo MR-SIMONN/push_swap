@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   moves_three_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/05 10:01:41 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 15:40:55 by moel-hai         ###   ########.fr       */
+/*   Created: 2025/03/08 13:26:30 by moel-hai          #+#    #+#             */
+/*   Updated: 2025/03/08 13:26:51 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void rrr(t_list **stack_a, t_list **stack_b)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	rra(stack_a, 1);
+	rrb(stack_b, 1);
+	write(1, "rrr\n", 4);
 }

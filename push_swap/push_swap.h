@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:14 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/07 14:27:06 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:04:22 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	sort_five(t_list **stack_a, t_list **stack_b);
 int		min_nbr_index(t_list *stack, int in);
 void	normal_indexing(t_list *stack);
 void	free_stack(t_list *st);
-void	free_stacks(t_list *a, t_list *b);
+void	free_stacks(t_list **a, t_list **b);
 int		ft_isdigit(int c);
 long	ft_atoi(const char *str);
 size_t	ft_strlen(const char *str );

@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:37:32 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 11:12:32 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:31:09 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,20 @@ t_list	*make_stack(char **av)
 
 void	do_move(t_list **stack_a, t_list **stack_b, t_moves *moves)
 {
+	t_moves	*p;
+
+	p = moves;
 	while (moves)
 	{
-		if ((ft_strcmp(moves->str, "sa\n") == 0))
-			sa(stack_a, 1);
-		else if ((ft_strcmp(moves->str, "pa\n") == 0))
-			pa(stack_a, stack_b, 1);
-		else if ((ft_strcmp(moves->str, "pb\n") == 0))
-			pb(stack_a, stack_b, 1);
-		else if ((ft_strcmp(moves->str, "ra\n") == 0))
-			ra(stack_a, 1);
-		else if ((ft_strcmp(moves->str, "rb\n") == 0))
-			rb(stack_b, 1);
-		else if ((ft_strcmp(moves->str, "rra\n") == 0))
-			rra(stack_a, 1);
-		else if ((ft_strcmp(moves->str, "rrb\n") == 0))
-			rrb(stack_b, 1);
-		else
-		{
-			free_stacks(*stack_a, *stack_b);
-			free_moves(moves);
-			errors(1);
-		}
+		apply_it(stack_a, stack_b, moves->str);
 		moves = moves->next;
 	}
-	free_moves(moves);
+	free_moves(p);
 }
 
 void	read_moves(t_list **stack_a, t_list **stack_b)
 {
-	int		i;
+	int	i;
 	char	*line;
 	t_moves	*moves;
 
@@ -93,6 +77,12 @@ void	read_moves(t_list **stack_a, t_list **stack_b)
 	moves = NULL;
 	while (line)
 	{
+		if (is_a_move(line))
+		{
+			free_stacks(stack_a, stack_b);
+			free(line);
+			errors(1);
+		}
 		if (*line != '\n' && *line != '\0')
 			make_moves(&moves, line);
 		free(line);
@@ -107,25 +97,24 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac == 1)
 		return (0);
-	if (ac > 1)
+	parsing(av);
+	stack_a = make_stack(av);
+	duplicated_check(stack_a);
+	read_moves(&stack_a, &stack_b);
+	if (is_sorted(stack_a) && ft_lstsize(stack_b) == 0)
 	{
-		parsing(av);
-		stack_a = make_stack(av);
-		duplicated_check(stack_a);
-		read_moves(&stack_a, &stack_b);
-		if (is_sorted(stack_a) && ft_lstsize(stack_b) == 0)
-		{
-			free_stacks(stack_a, stack_b);
-			write(1, "OK\n", 3);
-			exit(0);
-		}
-		else
-		{
-			free_stacks(stack_a, stack_b);
-			write(1, "KO\n", 3);
-			exit(1);
-		}
+		free_stack(stack_a);
+		write(1, "OK\n", 3);
+		exit(0);
+	}
+	else
+	{
+		free_stacks(&stack_a, &stack_b);
+		write(1, "KO\n", 3);
+		exit(1);
 	}
 }

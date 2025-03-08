@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:09 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/07 14:24:59 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:04:15 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int	main(int ac, char **av)
 		if (is_sorted(stack_a))
 			return (free_stack(stack_a), 0);
 		sort_it(&stack_a, &stack_b);
-		free_stacks(stack_a, stack_b);
+		free_stacks(&stack_a, &stack_b);
 	}
 }

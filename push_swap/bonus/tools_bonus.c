@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 09:59:07 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/07 09:48:11 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:05:39 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ void	free_stack(t_list *s)
 		p = s->next;
 		free(s);
 		s = p;
+	}
+	s = NULL;
+}
+
+void	free_stacks(t_list **a, t_list **b)
+{
+	if (*a)
+	{
+		free_stack(*a);
+		*a = NULL;
+	}
+	if (*b)
+	{
+		free_stack(*b);
+		*b = NULL;
 	}
 }
 

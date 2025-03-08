@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:26 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 11:11:17 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:33:29 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,16 @@ void	index_by_ascending_order(t_list **s)
 	}
 }
 
-void	free_stacks(t_list *a, t_list *b)
+void	free_stacks(t_list **a, t_list **b)
 {
-	free_stack(a);
-	free_stack(b);
+	if (*a)
+	{
+		free_stack(*a);
+		*a = NULL;
+	}
+	if (*b)
+	{
+		free_stack(*b);
+		*b = NULL;
+	}
 }
