@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 10:11:03 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 10:11:31 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/07 16:28:01 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstnew(int content, int i)
 
 	s = (t_list *)malloc(sizeof(t_list));
 	if (!s)
-		return (0);
+		errors(1);
 	s->number = content;
 	s->index = i;
 	s->next = NULL;

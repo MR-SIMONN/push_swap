@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:35:00 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/06 08:05:55 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/07 17:11:53 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <string.h>
 # include <fcntl.h>
 # include <limits.h>
+
+typedef struct s_moves
+{
+	char			*str;
+	struct s_moves	*next;
+}	t_moves;
 
 typedef struct s_list
 {
@@ -39,7 +45,9 @@ void	errors(int i);
 int		is_sorted(t_list	*s);
 t_list	*next_to_last(t_list *lst);
 void	free_stack(t_list *st);
+void	free_stacks(t_list *a, t_list *b);
 void	free_all(char **str);
+void	free_moves(t_moves *s);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_isdigit(int c);
 long	ft_atoi(const char *str);
@@ -52,5 +60,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
+void    make_moves(t_moves **moves, char *str);
+void	free_moves(t_moves *s);
 
 #endif

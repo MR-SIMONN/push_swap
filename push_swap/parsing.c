@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:01 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/05 09:52:30 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:18:17 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	duplicated_check(t_list *stack_a)
 	int			j;
 	t_list		*p;
 
+	if (!stack_a)
+		exit(1);
 	while (stack_a)
 	{
 		i = stack_a->number;
@@ -28,7 +30,10 @@ void	duplicated_check(t_list *stack_a)
 			if (i == p->number)
 				j++;
 			if (j > 1)
+			{
+				free_stack(stack_a);
 				errors(1);
+			}
 			p = p->next;
 		}
 		stack_a = stack_a->next;
@@ -62,7 +67,10 @@ void	is_it_valid(char *s)
 	{
 		nb = ft_atoi(str[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
+		{
+			free_all(str);
 			errors(1);
+		}
 		only_digits_check(str[i]);
 		i++;
 	}
