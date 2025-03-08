@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 04:32:17 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/06 07:47:15 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 09:02:35 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,7 @@ long	ft_atoi(const char	*str)
 		prev_r = r;
 		r = r * 10 + (((char *)str)[i++] - 48);
 		if ((r / 10) != prev_r)
-		{
-			if (s > 0)
-				errors(1);
-			return (0);
-		}
+			errors(1);
 	}
 	return (r * s);
 }
