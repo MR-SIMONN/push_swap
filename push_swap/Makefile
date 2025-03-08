@@ -6,7 +6,7 @@
 #    By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 22:24:40 by moel-hai          #+#    #+#              #
-#    Updated: 2025/03/07 17:15:25 by moel-hai         ###   ########.fr        #
+#    Updated: 2025/03/08 10:40:28 by moel-hai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,3 +51,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean
+
+redo: bonus
+	@make clean

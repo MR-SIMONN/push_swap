@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:37:32 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 09:15:48 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 11:06:31 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	do_move(t_list **stack_a, t_list **stack_b, t_moves *moves)
 			free_moves(moves);
 			errors(1);
 		}
+		moves = moves->next;
 	}
 	free_moves(moves);
 }
@@ -92,11 +93,13 @@ void	read_moves(t_list **stack_a, t_list **stack_b)
 	moves = NULL;
 	while (line)
 	{
-		make_moves(&moves, line);
+		if (*line != '\n' && *line != '\0')
+			make_moves(&moves, line);
 		free(line);
 		line = get_next_line(0);
 	}
-	do_move(stack_a, stack_b, moves);
+	if (moves)
+		do_move(stack_a, stack_b, moves);
 }
 
 int	main(int ac, char **av)

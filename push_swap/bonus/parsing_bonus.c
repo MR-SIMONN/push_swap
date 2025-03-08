@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:34:34 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 08:49:48 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/08 10:53:35 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	duplicated_check(t_list *stack_a)
 	int			i;
 	int			j;
 	t_list		*p;
+	t_list		*tmp;
 
+	tmp = stack_a;
 	while (stack_a)
 	{
 		i = stack_a->number;
@@ -29,7 +31,7 @@ void	duplicated_check(t_list *stack_a)
 				j++;
 			if (j > 1)
 			{
-				free_stack(stack_a);
+				free_stack(tmp);
 				errors(1);
 			}
 			p = p->next;
