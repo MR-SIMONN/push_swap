@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 08:37:32 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 15:31:09 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/09 11:42:53 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	do_move(t_list **stack_a, t_list **stack_b, t_moves *moves)
 
 void	read_moves(t_list **stack_a, t_list **stack_b)
 {
-	int	i;
+	int		i;
 	char	*line;
 	t_moves	*moves;
 

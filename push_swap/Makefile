@@ -6,7 +6,7 @@
 #    By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/14 22:24:40 by moel-hai          #+#    #+#              #
-#    Updated: 2025/03/08 15:54:56 by moel-hai         ###   ########.fr        #
+#    Updated: 2025/03/09 11:39:42 by moel-hai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,15 @@ BOBJS = $(BSRCS:%.c=%.o)
 
 FLAGS = -Wall -Wextra -Werror
 
+DEPS = push_swap.h
+BONUS_DEPS = bonus/checker.h bonus/get_next_line/get_next_line.h
+
 all: $(NAME)
 
-%.o: %.c push_swap.h bonus/checker.h
+bonus/%.o: bonus/%.c $(BONUS_DEPS)
+	cc ${FLAGS} -c $< -o $@
+
+%.o: %.c ${DEPS}
 	cc ${FLAGS} -c $< -o $@
 
 $(NAME) : $(OBJS)

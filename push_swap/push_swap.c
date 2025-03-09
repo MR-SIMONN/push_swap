@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:09 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 15:04:15 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/09 11:17:04 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	stack_a = NULL;
+	stack_b = NULL;
 	if (ac == 1)
 		return (0);
 	if (ac > 1)

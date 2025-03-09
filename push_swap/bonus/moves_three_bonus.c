@@ -6,13 +6,13 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/08 13:26:30 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/08 13:26:51 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/09 11:43:08 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	rra(stack_a, 1);
 	rrb(stack_b, 1);
