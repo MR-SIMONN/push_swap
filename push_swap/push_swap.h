@@ -6,7 +6,7 @@
 /*   By: moel-hai <moel-hai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 03:46:14 by moel-hai          #+#    #+#             */
-/*   Updated: 2025/03/09 11:39:20 by moel-hai         ###   ########.fr       */
+/*   Updated: 2025/03/09 11:56:26 by moel-hai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
-# include <fcntl.h>
 # include <limits.h>
 
 typedef struct s_list
