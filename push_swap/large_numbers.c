@@ -59,6 +59,7 @@ void	sort_stack_b(t_list **stack_a, t_list **stack_b)
 			rb(stack_b, 0);
 		else if (max_nbr_place(*stack_b) > size / 2)
 			rrb(stack_b, 0);
+		stack_b = stack_b->next;
 	}
 }
 
@@ -107,6 +108,7 @@ void	large_numbers(t_list **stack_a, t_list **stack_b, int j)
 			rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
+		*stack_a = (*satck_a)->next;
 	}
 	sort_stack_b(stack_a, stack_b);
 }
