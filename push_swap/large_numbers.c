@@ -108,7 +108,6 @@ void	large_numbers(t_list **stack_a, t_list **stack_b, int j)
 			rra(stack_a, 0);
 		else
 			ra(stack_a, 0);
-		*stack_a = (*satck_a)->next;
 	}
 	sort_stack_b(stack_a, stack_b);
 }
